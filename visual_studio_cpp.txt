@@ -1,0 +1,5 @@
+Familiarize yourself with visual Studio C++ installed in lab PCs. Create Hello world program using this new IDE. Compile and Run. If you have any difficulty ask your tutor.
+You must also learn how to create projects. Everything is very similar to Dev C++ so you should not have any problems.
+
+Why are you learing this new IDE?
+Once you know about this IDE then you will realize that it is much better IDE than Dev C++. It has more features and it is more programmer friendly. Dev C++ also has many BUGS. We use Dev C++ only for beginners.

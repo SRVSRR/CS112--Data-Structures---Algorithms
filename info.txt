@@ -1,0 +1,6 @@
+NumCustomers: 3
+
+ID   Income  Age 
+c001 30000    25
+C002 23000    30
+C003 45000    32

@@ -14,24 +14,24 @@ int main(){
     n = new node;
 
     node *n2 = new node;
-    n->next = n2;
-    n->next->data = 5;
+    delete n2;
+    n2 = NULL;
 
     node *n3 = new node;
-    n2->next->next = n3;
-    n2->next->next->data = 8;
+    n->next = n3;
+    n->next->next->data = 8;
 
     node *n4 = new node;
-    n2->next->next->next = n4;
-    n2->next->next->next->data = 2;
+    n3->next->next->next = n4;
+    n3->next->next->next->data = 2;
 
     node *n5 = new node;
-    n2->next->next->next->next = n5;
-    n2->next->next->next->next->data = 2;
+    n4->next->next->next->next = n5;
+    n4->next->next->next->next->data = 2;
 
     node *n6 = new node;
-    n2->next->next->next->next->next = n5;
-    n2->next->next->next->next->next->data = 2;
+    n5->next->next->next->next->next = n5;
+    n5->next->next->next->next->next->data = 2;
 
     return 0;
 }

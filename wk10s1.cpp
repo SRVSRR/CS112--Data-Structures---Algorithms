@@ -30,11 +30,20 @@ void discard_line(ifstream &in);
 
 // Determine Grade
 char calculateGrade(int marks) {
-    if (marks >= 85) return 'A';
-    if (marks >= 70) return 'B';
-    if (marks >= 50) return 'C';
-    if (marks >= 30) return 'D';
-    return 'F';
+    if (marks >= 85){
+        return 'A';
+    }
+    else if (marks >= 70){
+        return 'B';
+    } 
+    else if (marks >= 50){
+        return 'C';
+    } 
+    else if (marks >= 30){
+        return 'D';
+    }else {
+        return 'F';
+    }    
 }
 
 int main() {
@@ -89,7 +98,7 @@ void AppendNode(NODE *pNode) {
         pTail->pNext = pNode;
         pNode->pPrev = pTail;
         pNode->pNext = NULL;
-        pTail = pNode;
+        // pTail = pNode;
     }
 }
 

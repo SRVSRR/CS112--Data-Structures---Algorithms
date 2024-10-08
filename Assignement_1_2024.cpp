@@ -3,6 +3,7 @@
 #include <fstream>
 using namespace std;
 
+
 const int SIZE = 20;
 
 struct Student{

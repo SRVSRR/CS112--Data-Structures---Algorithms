@@ -4,7 +4,7 @@ using namespace std;
 
 template <class dataType>
 class BinaryTreeNode {
-public:
+    public:
     BinaryTreeNode() : leftTreeNode(nullptr), rightTreeNode(nullptr) {}
 
     bool isLeaf() {
@@ -35,7 +35,7 @@ public:
         rightTreeNode = T1;
     }
 
-private:
+    private:
     dataType treeNodeData;
     BinaryTreeNode* leftTreeNode;
     BinaryTreeNode* rightTreeNode;

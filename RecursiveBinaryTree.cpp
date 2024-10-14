@@ -42,6 +42,20 @@ void Postorder(Node* root) {
     preorder(root->left);
 }
 
+void InOrder(Node* root) {
+    if (root == nullptr){
+        return;
+    }
+    // Traverse the left subtree
+    preorder(root->left);
+
+    // Visit the root node
+    cout << root->data << " ";
+
+    // Traverse the right subtree
+    preorder(root->right);
+}
+
 int main() {
     // Creating a simple binary tree
     Node* root = new Node('A');
@@ -65,6 +79,9 @@ int main() {
     cout << endl;
     cout << "Postorder traversal (recursive): ";
     Postorder(root);
+    cout << endl;
+    cout << "Inorder traversal (recursive): ";
+    InOrder(root);
     
     return 0;
 }

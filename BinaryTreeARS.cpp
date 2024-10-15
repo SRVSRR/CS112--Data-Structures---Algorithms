@@ -14,6 +14,33 @@ struct node {
     }
 };
 
+int findMax(node* root) {
+    if (root == nullptr)
+        return 0;
+    int max;
+    int maxVal = root->data;  // Start with root data
+
+
+    int leftMax = findMax(root->left);  // Find max in left subtree
+    int rightMax = findMax(root->right);  // Find max in right subtree
+
+    /*
+    maxVal is root
+    Highest Lowest in left right side of the tree as maxleft wirh other side of branch as right max 
+    */ 
+    
+    if(maxVal < leftMax){
+        max = leftMax; 
+    }else if(maxVal < rightMax){
+        max = rightMax;
+    }else {
+        leftMax = findMax(root->left);  // Find max in left subtree
+        rightMax = findMax(root->right);  // Find max in right subtree
+    }
+
+    return max;
+}
+
 void PreOrder(node *root){
     if(root == NULL){
         return;
@@ -67,5 +94,8 @@ int main(){
 
     cout << "Post order" <<endl;
     PostOrder(root);
+    cout << endl;
 
+    int highest = findMax( root);
+    cout << highest;
 }

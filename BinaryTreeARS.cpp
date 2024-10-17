@@ -14,27 +14,10 @@ struct node {
     }
 };
 
-void PreOrder(node *root){
-    if(root == NULL){
-        return;
-    }
-
-    cout << root->data << " ";
-
-    PreOrder(root->left);
-
-    PreOrder(root->right);
-}
-
-void PostOrder(node *root){
-    if(root == NULL){
-        return;
-    }
-    
-    PostOrder(root->left);
+void max(node *root){
+    if(root->data != NULL){
         
-    PostOrder(root->right);
-
+    }
     int highest = 0;  // Initialize highest with a default value
     int leftH = 0;
     int rightH = 0;
@@ -58,6 +41,30 @@ void PostOrder(node *root){
     if(highest != 0){
     cout << "Highest of left and right: " << highest << endl;  // Print the highest between left and right
     }
+}
+
+void PreOrder(node *root){
+    if(root == NULL){
+        return;
+    }
+
+    cout << root->data << " ";
+
+    PreOrder(root->left);
+
+    PreOrder(root->right);
+}
+
+void PostOrder(node *root){
+    if(root == NULL){
+        return;
+    }
+    
+    PostOrder(root->left);
+        
+    PostOrder(root->right);
+
+    cout << root->data << " ";
 
 }
 

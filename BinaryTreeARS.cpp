@@ -14,35 +14,6 @@ struct node {
     }
 };
 
-void max(node *root){
-    if(root->data != NULL){
-        
-    }
-    int highest = 0;  // Initialize highest with a default value
-    int leftH = 0;
-    int rightH = 0;
-
-    if (root->left != NULL) {
-        leftH = root->left->data;
-    }
-    if (root->right != NULL) {
-        rightH = root->right->data;
-    }
-
-    // Find the highest between left and right child values
-    if (leftH > rightH) {
-        highest = leftH;
-    } else {
-        highest = rightH;
-    }
-
-    cout << root->data << " ";
-
-    if(highest != 0){
-    cout << "Highest of left and right: " << highest << endl;  // Print the highest between left and right
-    }
-}
-
 void PreOrder(node *root){
     if(root == NULL){
         return;
@@ -80,6 +51,33 @@ void InOrder(node *root) {
     InOrder(root->right);  // Recursively call right subtree
 }
 
+void max(node *root){
+    int highest = 0;  // Initialize highest with a default value
+    int leftH;
+    int rightH;
+
+    if (root->left != NULL) {
+        leftH = root->left->data;
+    }
+    if (root->right != NULL) {
+        rightH = root->right->data;
+    }
+
+    // Find the highest between left and right child values
+    if (leftH > rightH) {
+        highest = leftH;
+    } 
+    if(leftH > rightH){
+        highest = rightH;
+    }
+
+    cout << root->data << " ";
+
+    if(highest != 0){
+    cout << "Highest of left and right: " << highest << endl;  // Print the highest between left and right
+    }
+}
+
 
 int main(){
     node *root = new node(1);
@@ -101,6 +99,8 @@ int main(){
     cout << "Post order" <<endl;
     PostOrder(root);
     cout << endl;
+
+    max(root);
 
     return 0;
 }

@@ -137,21 +137,18 @@ double postOrderEvaluate ( BinaryTree <dataType> * bt )
 }
 
 template <class dataType>
-void printleaves (BinaryTree <dataType> * bt)
+void printLeaves (BinaryTree <dataType> * bt)
 {
-
-	//traverse left child
-		inOrderTraverse (bt->left());
-	
-	if (bt->left() == NULL && bt->right() == NULL)
-	{		
-		//visit tree
-		cout << bt->getData() <<"\t";
-	}
-	
-	//traverse right child
-		inOrderTraverse (bt->right());
-
+    if (bt != NULL)
+    {
+        if (bt->isLeaf())
+            cout << bt->getData() <<"\t";
+        else
+        {
+            printLeaves(bt->left());
+            printLeaves(bt->right());
+        }
+    }
 }
 
 int main()
@@ -194,7 +191,7 @@ int main()
     cout <<"print the leaves"<<endl;
 	//TODO
 
-	printleaves (root);
+	printLeaves (root);
     
 	system("PAUSE");
 	return 0;

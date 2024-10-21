@@ -1,106 +1,71 @@
 #include <iostream>
-
 using namespace std;
 
-struct node {
+class Node
+{
+public:
+    Node *left;
+    Node *right;
     int data;
-    node *left;
-    node *right;
 
-    node(int value){
-        data = value;
+    Node(int data)
+    {
         left = NULL;
         right = NULL;
+        this->data = data;
+    }
+
+    Node *getLeft()
+    {
+        return left;
+    }
+
+    Node *getRight()
+    {
+        return right;
     }
 };
 
-void PreOrder(node *root){
-    if(root == NULL){
-        return;
+class Tree
+{
+public:
+    Node *root;
+
+    int getMax(Node *node, int max)
+    {
+        if (node->data > max)
+        {
+            max = node->data;
+        }
+
+        if (node->left != NULL)
+        {
+            max = getMax(node->left, max);
+        }
+
+        if (node->right != NULL)
+        {
+            max = getMax(node->right, max);
+        }
+
+        return max;
     }
+};
 
-    cout << root->data << " ";
+int main()
+{
+    Tree *tree = new Tree;
+    Node *root = new Node(1);
+    Node *left = new Node(2);
+    Node *right = new Node(3);
 
-    PreOrder(root->left);
+    tree->root = root;
+    root->left = left;
+    root->right = right;
 
-    PreOrder(root->right);
-}
+    cout << "Max: " << tree->getMax(root, 0) << endl;
 
-void PostOrder(node *root){
-    if(root == NULL){
-        return;
-    }
-    
-    PostOrder(root->left);
-        
-    PostOrder(root->right);
-
-    cout << root->data << " ";
-
-}
-
-void InOrder(node *root) {
-    if (root == NULL) {
-        return;
-    }
-
-    InOrder(root->left);  // Recursively call left subtree
-
-    cout << root->data << " ";  // Print the root data during in-order traversal
-
-    InOrder(root->right);  // Recursively call right subtree
-}
-
-void max(node *root){
-    int highest = 0;  // Initialize highest with a default value
-    int leftH;
-    int rightH;
-
-    if (root->left != NULL) {
-        leftH = root->left->data;
-    }
-    if (root->right != NULL) {
-        rightH = root->right->data;
-    }
-
-    // Find the highest between left and right child values
-    if (leftH > rightH) {
-        highest = leftH;
-    } 
-    if(leftH > rightH){
-        highest = rightH;
-    }
-
-    cout << root->data << " ";
-
-    if(highest != 0){
-    cout << "Highest of left and right: " << highest << endl;  // Print the highest between left and right
-    }
-}
-
-
-int main(){
-    node *root = new node(1);
-    root->left = new node(2);
-    root->right = new node(3);
-    root->left->left = new node(4);
-    root->left->right = new node(5);
-    root->right->left = new node(6);
-    root->right->right = new node(7);
-
-    cout << "Pre order" <<endl;
-    PreOrder(root);
-    cout << endl;
-
-    cout << "In order" <<endl;
-    InOrder(root);
-    cout << endl;
-
-    cout << "Post order" <<endl;
-    PostOrder(root);
-    cout << endl;
-
-    max(root);
+    delete tree;
 
     return 0;
 }

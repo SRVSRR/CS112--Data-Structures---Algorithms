@@ -103,6 +103,7 @@ void postOrderTraverse (BinaryTree <dataType> * bt)
 		//traverse left child
 		postOrderTraverse (bt->left());
 		//traverse right child
+		
 		postOrderTraverse (bt->right());
 		//visit tree
 		cout << bt->getData() <<"\t";

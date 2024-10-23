@@ -1,0 +1,44 @@
+complete the traversal for pre order.
+
+1 - A
+
+2 - POT(B)
+
+    1 - B
+
+    2 POT(D) -left
+
+       1 - D
+
+       2 - POT(H) - left
+
+           1 - H
+
+           2 - POT(NULL)
+
+           3 - POT(NULL)
+
+       3 - POT (I) -right
+
+           1 - I
+
+           2 - POT(NULL)
+
+           3 - POT (NULL)
+
+    3 - POT (E) -right
+
+       1 - E
+
+       2 - POT(NULL)
+
+       3 - POT (J)
+
+
+          A
+         / \
+        B   (empty)
+       / \
+      D   E
+     / \   \
+    H   I   J

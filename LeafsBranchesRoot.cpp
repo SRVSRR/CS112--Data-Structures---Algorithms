@@ -92,9 +92,9 @@ void printBranches (BinaryTree <dataType> * bt)
 {
     if (bt != NULL && !bt->isLeaf())
     {
-        cout << bt->getData() <<"\t";
         printBranches(bt->left());
         printBranches(bt->right());
+        cout << bt->getData() <<"\t";
     }
 }
 

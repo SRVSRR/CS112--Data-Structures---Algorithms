@@ -148,20 +148,29 @@ void printRoot (BinaryTree <dataType> * bt)
 }
 
 template <class dataType>
-bool isValiid(BinaryTree <dataType> * bt){
-
-    if(bt != NULL){
-        isValiid(bt->left());
-        if(bt->getData() > mid){
-            return false;
-        }
-        isValiid(bt->right());
-        if(bt->getData() < mid){
-            return false;
-        }
+bool isValidBSTHelper(BinaryTree<dataType>* bt, dataType min, dataType max) {
+    if (bt == nullptr) {
+        return true;  // An empty tree is valid
     }
 
-    return isValiid;
+    dataType root = bt->getData();
+
+    // Check if the current node violates the BST property
+    if (root <= min || root >= max) {
+        return false;
+    }
+
+    // Recursively check left and right subtrees with updated boundaries
+    return isValidBSTHelper(bt->left(), min, root) && isValidBSTHelper(bt->right(), root, max);
+}
+
+template <class dataType>
+int isValid(BinaryTree<dataType>* bt) {
+    if (isValidBSTHelper(bt, std::numeric_limits<dataType>::min(), std::numeric_limits<dataType>::max())) {
+        return 1;  // Return 1 for a valid BST
+    } else {
+        return 0;  // Return 0 for an invalid BST
+    }
 }
 
 int main()
@@ -211,8 +220,9 @@ int main()
     cout << "Leaves: ";
     printLeaves(root);
     cout << endl;
-
-    check = isValiid(root);
+    
+    cout << "Valid: ";
+    cout << isValid(root);
     
     system("PAUSE");
     return 0;

@@ -87,3 +87,12 @@ int main() {
 
     return 0;
 }
+/*
+         F
+       /   \
+      D     J
+     / \   / \
+    B   E G   K
+   / \     \
+  A   C     I
+*/

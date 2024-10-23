@@ -144,7 +144,7 @@ double postOrderEvaluate ( BinaryTree <dataType> * bt )
 
 int minval(BinaryTree<int> *bt) {
   if (bt == NULL) {
-    return 0;  // Return the smallest possible integer when there's no tree
+    return 1000;  // Return the smallest possible integer when there's no tree
   }
 
   // Get the data of the current node

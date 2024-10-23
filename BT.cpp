@@ -72,6 +72,16 @@ int main() {
     cout << "Binary Tree Structure:\n";
     displayTree(root);
 
+    /*
+        A
+      /   \
+     B      E
+    / \    / \
+   C   D  F   G
+             /
+            H
+  */
+
     // Traversals
     cout << "\nIn-order Traversal: ";
     inOrder(root);

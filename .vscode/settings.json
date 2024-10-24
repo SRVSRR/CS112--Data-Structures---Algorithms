@@ -59,6 +59,13 @@
   "files.associations": {
     "limits": "cpp",
     "algorithm": "cpp",
-    "unordered_map": "cpp"
+    "unordered_map": "cpp",
+    "deque": "cpp",
+    "fstream": "cpp",
+    "ios": "cpp",
+    "sstream": "cpp",
+    "streambuf": "cpp",
+    "string": "cpp",
+    "vector": "cpp"
   }
 }

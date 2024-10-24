@@ -141,18 +141,15 @@ double postOrderEvaluate ( BinaryTree <dataType> * bt )
 }
 
 
-bool NumCheck(BinaryTree<int> *bt, int num) {
+bool NumCheck(BinaryTree<int> *bt, int &num) {
     if (bt == NULL) {
-        return 0;
+        return false;
     }
 
-    if(num == bt->getData()){
+    if(bt->getData() == num){
         return true;
     }
-    else {
-        NumCheck(bt->right(), num);
-        NumCheck(bt->left(), num);
-    }
+    return NumCheck(bt->left(), num) || NumCheck(bt->right(), num);
 }
 
 int main()
@@ -180,7 +177,9 @@ int main()
     //solution:
     cout << endl;
     cout << "SUM: ";
-    if(NumCheck(root, 4) == true){
+	int num = 4;
+
+    if(NumCheck(root, num) == true){
 		cout << "1";
 	}else {
 		cout << "0";

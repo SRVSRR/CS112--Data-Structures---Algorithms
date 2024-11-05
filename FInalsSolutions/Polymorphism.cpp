@@ -83,6 +83,11 @@ class Commision_Employee: public employee{
     };  
 };
 
+void print_salary(employee *em){
+    double salary = em->calc_salary();
+    cout << "salary: " << salary;
+}
+
 int main(){
     hourly_employee em1;
     em1.setname("Rohan");
@@ -95,6 +100,27 @@ int main(){
     cout << "Hourly Rate: " << em1.gethourlyRate() << endl;
     cout << "Hours Worked: " << em1.gethoursWorked() << endl;
     cout << "Salary : " << em1.calc_salary() << endl;
+
+    cout << endl;
+
+    Commision_Employee em2;
+    em2.setname("Aisha");
+    em2.setID("002");
+    em2.setTotalSales(5000);
+    em2.setCommissionPercent(0.10);
+
+    cout << "Name: " << em2.getname() << endl;
+    cout << "ID: " << em2.getID() << endl;
+    cout << "Commission Rate: " << em2.getCommissionPercent() << endl;
+    cout << "Total Sales : " << em2.getTotalSales() << endl;
+    cout << "Salary : " << em2.calc_salary() << endl;
+
+    cout << endl;
+
+    cout << "Salary Stats" << endl;
+    cout << em1.getname() << ": "; print_salary(&em1);
+    cout << endl;
+    cout << em2.getname() << ": "; print_salary(&em2);
 
 
     return 0;

@@ -36,6 +36,9 @@ class hourly_employee: public employee{
     double hourlyRate;
 
     public:
+    hourly_employee(){};
+    ~hourly_employee(){};
+
     void sethoursWorked(int hours){
         hoursWorked = hours;
     }
@@ -64,6 +67,9 @@ class Commision_Employee: public employee{
     double CommissionPercent;
 
     public:
+    Commision_Employee(){};
+    ~Commision_Employee(){};
+
     void setTotalSales(int Sales){
         TotalSales = Sales;
     }

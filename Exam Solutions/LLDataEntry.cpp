@@ -7,6 +7,19 @@ struct Node{
     int data;
 };
 
+Node *reverse(Node *head){
+    Node *prev = NULL;
+
+    while(head != NULL){
+        Node *next = head->next;
+        head->next = prev;
+        prev = head;
+        head = next;
+    }
+
+    return prev;
+}
+
 int main(){
     Node * n = NULL;
     Node * pHead = NULL;
@@ -39,6 +52,16 @@ int main(){
     while(current != NULL){
         cout << current->data << " ,";
         current = current->next;
+    }
+    cout << endl;
+
+    pHead = reverse(pHead);
+
+    Node *current2 = pHead;
+
+    while(current2 != NULL){
+        cout << current2->data << " ,";
+        current2 = current2->next;
     }
 
     cout << endl;

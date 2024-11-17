@@ -18,11 +18,11 @@ class employee{
 
         string getname() {
             return name;
-        };
+        }
 
         string getID(){
             return ID;
-        };
+        }
 
         virtual float calc_salary() = 0;
     private:
@@ -49,15 +49,15 @@ class hourly_employee: public employee{
 
     int gethoursWorked() const {
         return hoursWorked;
-    };
+    }
 
     double gethourlyRate(){
         return hourlyRate;
-    };
+    }
 
     float calc_salary(){
         return hourlyRate * hoursWorked;
-    };
+    }
 
 };
 
@@ -80,15 +80,15 @@ class Commision_Employee: public employee{
 
     int getTotalSales() const {
         return TotalSales;
-    };
+    }
 
     double getCommissionPercent(){
         return CommissionPercent;
-    };
+    }
 
     float calc_salary(){
         return CommissionPercent * TotalSales;
-    };  
+    }
 };
 
 void print_salary(employee *em){

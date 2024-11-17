@@ -9,11 +9,7 @@ private:
     int size;     // Current number of elements
 
 public:
-    ArrayQueue(){
-        front = 0;
-        rear = -1;
-        size = 0;
-    }
+    ArrayQueue() : front(0), rear(-1), size(0) {}
 
     // Enqueue operation
     void enqueue(int data) {

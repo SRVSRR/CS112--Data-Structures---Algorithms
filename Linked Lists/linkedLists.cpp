@@ -40,7 +40,5 @@ int main(){
     n->data  = 5;
     n->next  = NULL;
 
- 
-
     return 0;
 }
